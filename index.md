@@ -1,12 +1,12 @@
 # Awalk Privacy Policy
 
-*Last updated: July 17, 2026*
+*Last updated: July 31, 2026*
 
 Awalk ("the app", "we", "us") is developed by Awalk Health. This policy is written directly from the app's source code — it describes exactly what Awalk does and does not do with your data.
 
 ## Summary
 
-Awalk has no account system, no backend server, and no internet permission. Everything you enter or that the app measures is stored only on your device, in an encrypted local database. Nothing leaves your phone. We don't collect analytics, we don't show ads, and we don't sell anything.
+Awalk has no account system and no backend server of its own. Everything you enter or that the app measures is stored only on your device, in an encrypted local database. Nothing leaves your phone except the purchase check the Play Store app itself performs when you buy Awalk Pro. We don't collect analytics, we don't show ads, and we don't sell anything.
 
 ## Data we collect
 
@@ -28,7 +28,7 @@ If you buy Awalk Pro, the purchase is handled entirely by Google Play Billing th
 - We do not access your contacts, camera, microphone, location, or files.
 - We do not share or sell any data to any third party, including advertisers.
 - We do not show ads in Awalk.
-- The app does not request Android's Internet permission at all — the only network activity on your device related to Awalk is the Play Store app itself handling purchases, which is between you and Google, not us.
+- The app holds Android's Internet permission only because Google's Play Billing library requires it to process purchases — Awalk's own code never makes a network call. The only network activity related to Awalk is the Play Store app itself handling purchases, which is between you and Google, not us.
 
 ## How your data is stored
 
@@ -43,8 +43,10 @@ All app data (step counts, walk history, your condition tag, meal times, purchas
 - **Receive boot completed** — so scheduled alarms survive a phone restart.
 - **Wake lock / vibrate / disable keyguard** — needed for the full-screen alarm to wake and vibrate the device like a normal alarm clock.
 - **Foreground service** — keeps the alarm/step-tracking reliable while active.
+- **Internet / access network state** — required by Google's Play Billing library to process in-app purchases. Not used by any of Awalk's own code.
+- **Billing** — lets the app talk to the Play Store's purchase system, per Google's requirements for apps that sell in-app products.
 
-None of these permissions give Awalk, or us, access to your data off-device — they control on-device behavior only (waking the screen, reading the step sensor, scheduling alarms).
+None of these permissions give Awalk, or us, access to your data off-device — they control on-device behavior only (waking the screen, reading the step sensor, scheduling alarms), except Internet/Billing, which is scoped entirely to the Play Store purchase flow described above.
 
 ## Data retention and deletion
 
